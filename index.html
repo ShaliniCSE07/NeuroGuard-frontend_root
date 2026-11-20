@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEUROGUARD — Caregiver Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+  <header class="app-header">
+    <h1>🧠 NEUROGUARD</h1>
+    <p>Caregiver Dashboard</p>
+    <div style="margin-top: 15px; display: flex; gap: 15px; justify-content: center;">
+      <a href="https://neuro-guard-frontend-games-bi4y-nine.vercel.app" target="_blank" class="play-btn">🎮 Play
+        Cognitive Games</a>
+      <a href="https://neuro-guard-frontend-games-personal-six.vercel.app " target="_blank"
+        class="play-btn secondary">📸 Personalised Memory Activity</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <label>User ID:
+        <input id="userIdInput" type="text" value="U001" />
+      </label>
+      <button id="loadBtn">Load Dashboard</button>
+      <span id="statusMsg"></span>
+    </section>
+
+    <section class="card" id="summaryCard">
+      <h2>Overview</h2>
+      <div class="summary-grid">
+        <div class="stat-box">
+          <span class="stat-value" id="statSessions">–</span>
+          <label>Total Sessions</label>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value" id="statSeverity">–</span>
+          <label>Overall Status</label>
+        </div>
+        <div class="stat-box">
+          <span class="stat-value" id="statFlags">–</span>
+          <label>Active Flags</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>📡 Cognitive Change Radar</h2>
+      <div id="radarContainer"></div>
+    </section>
+
+    <section class="card">
+      <h2>📈 Performance Trend</h2>
+      <canvas id="trendChart" height="120"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>💡 Personalised Recommendations</h2>
+      <ul id="recommendationsList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>🗂 Activity History</h2>
+      <table id="historyTable">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Game</th>
+            <th>Score</th>
+            <th>Accuracy</th>
+            <th>Time (s)</th>
+            <th>Mistakes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>

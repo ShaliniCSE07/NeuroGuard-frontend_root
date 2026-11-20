@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Nunito:wght@400;600;700;800&display=swap');
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  /* Beautiful soft beige gradient */
+  background: linear-gradient(135deg, #FAF7F2 0%, #EBE3D5 100%);
+  color: #3B3A39;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Header */
+.app-header {
+  background: transparent;
+  padding: 40px 20px 20px;
+  text-align: center;
+}
+.app-header h1 { 
+  margin: 0; 
+  font-size: 2.6rem; 
+  font-family: 'Merriweather', serif; 
+  color: #2E6C8E; 
+  letter-spacing: -1px;
+}
+.app-header p { 
+  margin: 6px 0 20px; 
+  color: #7A7A7A; 
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Buttons */
+.play-btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #7B5C43, #5A422F);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 6px 20px rgba(123, 92, 67, 0.3);
+}
+.play-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(123, 92, 67, 0.4);
+}
+.play-btn.secondary { 
+  background: linear-gradient(135deg, #2E6C8E, #1D4D68);
+  box-shadow: 0 6px 20px rgba(46, 108, 142, 0.3);
+}
+.play-btn.secondary:hover { 
+  box-shadow: 0 10px 25px rgba(46, 108, 142, 0.4);
+}
+
+/* Layout */
+.container { max-width: 1100px; margin: 20px auto 60px; padding: 0 20px; }
+
+/* Frosted Glass Controls */
+.controls { 
+  display: flex; 
+  gap: 15px; 
+  align-items: center; 
+  margin-bottom: 30px; 
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  padding: 20px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+.controls label { font-weight: 800; color: #5A5A5A; }
+.controls input { 
+  padding: 12px 16px; 
+  font-size: 1rem; 
+  border: 2px solid rgba(232, 227, 217, 0.8); 
+  border-radius: 12px; 
+  width: 140px; 
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 0.2s;
+}
+.controls input:focus { border-color: #2E6C8E; outline: none; box-shadow: 0 0 0 3px rgba(46, 108, 142, 0.2); }
+.controls button {
+  padding: 12px 24px; 
+  font-size: 1rem; 
+  border: none; 
+  border-radius: 12px;
+  background: #3B3A39; 
+  color: #fff; 
+  cursor: pointer; 
+  font-weight: 800;
+  transition: all 0.2s;
+}
+.controls button:hover { background: #1A1A1A; transform: translateY(-2px); }
+#statusMsg { color: #16A34A; font-size: 0.95rem; font-weight: 800; margin-left: auto; }
+
+/* Frosted Glass Cards */
+.card {
+  background: rgba(255, 255, 255, 0.7); 
+  backdrop-filter: blur(16px);
+  border-radius: 24px; 
+  padding: 35px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.06); 
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+.card h2 { 
+  margin-top: 0; 
+  font-size: 1.6rem; 
+  font-family: 'Merriweather', serif; 
+  color: #2E6C8E; 
+  margin-bottom: 25px;
+}
+
+/* Summary Stat Boxes */
+.summary-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px; 
+}
+.stat-box { 
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 30px 20px; 
+  border-radius: 20px; 
+  text-align: center;
+  border: 1px solid rgba(232, 227, 217, 0.5);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
+.stat-box:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+.stat-value { 
+  display: block;
+  font-size: 3rem; 
+  font-weight: 800; 
+  color: #7B5C43; 
+  line-height: 1; 
+  margin-bottom: 10px;
+}
+.stat-box label { 
+  font-size: 0.9rem; 
+  color: #7A7A7A; 
+  font-weight: 800; 
+  text-transform: uppercase; 
+  letter-spacing: 1.5px; 
+}
+
+/* Softer Warning Color */
+#statSeverity { color: #D97706; font-size: 2.2rem; padding-top: 10px; }
+
+/* Radar */
+.radar-game { padding: 25px 0; border-bottom: 1px solid rgba(232, 227, 217, 0.6); }
+.radar-game:last-child { border-bottom: none; padding-bottom: 0; }
+.radar-game:first-child { padding-top: 0; }
+.radar-title { font-weight: 800; margin-bottom: 12px; font-size: 1.3rem; color: #3B3A39; }
+.badge {
+  display: inline-block; padding: 6px 16px; border-radius: 30px;
+  font-size: 0.8rem; font-weight: 800; margin-left: 12px; text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.badge.stable { background: #D1F4D1; color: #166534; }
+.badge.watch { background: #FEF9C3; color: #854D0E; }
+.badge.attention { background: #FEE2E2; color: #991B1B; box-shadow: 0 0 10px rgba(220, 38, 38, 0.2); }
+.change-list { display: flex; flex-wrap: wrap; gap: 20px; font-size: 1.05rem; font-weight: 700; color: #5A5A5A; }
+.change-list span.up { color: #16A34A; }
+.change-list span.down { color: #DC2626; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 16px 12px; border-bottom: 1px solid rgba(232, 227, 217, 0.6); font-size: 0.95rem; }
+th { color: #7A7A7A; font-weight: 800; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; padding-bottom: 20px;}
+tr:hover td { background: rgba(255,255,255,0.5); }
+
+/* Recommendations */
+#recommendationsList { padding-left: 20px; }
+#recommendationsList li { margin-bottom: 18px; line-height: 1.6; font-size: 1.05rem; color: #4A4A4A; }
+#recommendationsList strong { color: #2E6C8E; font-size: 1.1rem; font-weight: 800; }
