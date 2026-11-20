@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://neuroguard-backend-1.onrender.com/api";
 
 async function fetchDashboard(userId) {
   const res = await fetch(`${API_BASE}/dashboard/${userId}`);
